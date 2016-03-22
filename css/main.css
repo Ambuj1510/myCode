@@ -1,0 +1,76 @@
+H1 {
+   font-family: 'Times New Roman';
+   font-size: 36px;
+   color: blue;
+   padding: 10px;
+   text-align: center;
+   text-shadow: 2px 2px black;
+}
+
+H2 {
+   font-family: arial,verdana,sans-serif;
+   font-size: 20px;
+   padding: 10px;
+   text-align: center;
+}
+
+P {
+   font-family: arial,verdana,sans-serif;
+   font-size: 12px;
+   padding: 2px;
+   color: red;
+   margin:0 20px 0 35px;
+   text-align: center;
+}
+
+BODY {
+   font-family: arial,verdana,sans-serif;
+   font-size: 16px;
+   background: #b2cecf;
+   padding: 10px;
+   text-align: center;
+}
+
+DIV {
+   font-family: arial,verdana,sans-serif;
+   font-size: 16px;
+   text-align: center;
+   border-image: right;
+   table-layout: center;
+   vertical-align: center;
+   padding: 10px;
+   border-image: bottom right;
+   
+}
+.right {
+    position: relative;
+    right: 0px;
+    bottom: 0px;
+    float: right;
+}
+
+table, th, td {
+    border: 10px;
+    text-align: center;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+}
+
+input:required:focus {
+  border: 3px solid red;
+  outline: none;
+}
+
+input:required:hover {
+  opacity: 1;
+}
+
+input:required {
+  box-shadow: 4px 4px 20px rgba(200, 0, 0, 0.85);
+}
+
+

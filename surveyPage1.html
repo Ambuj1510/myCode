@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css"
+	href="css/jquery-ui.structure.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="css/main1.css" />
+
+
+
+<script type="text/javascript" src="external/jquery/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/newSurvey1.js"></script>
+
+</head>
+
+<body onload="setCookie()">
+
+
+	<h1>CS DEPARTMENT SURVEY</h1>
+	<h2>Please fill out the form shown below</h2>
+	<br>
+
+	<form id="form1" autocomplete="on">
+		<table align="center">
+
+
+			<tr>
+				<td>user name:</td>
+				<td><input type="text" name="username" id="username"
+					placeholder="First Middle Last" autofocus /></td>
+
+			</tr>
+
+
+			<tr>
+				<td>street address:</td>
+				<td><input type="text" name="street address" id="streetaddress"
+					placeholder="Complete Address" /></td>
+			</tr>
+
+
+			<tr>
+				<td>city:</td>
+				<td><input type="text" name="city" id="city" /></td>
+			</tr>
+
+
+			<tr>
+				<td>state:</td>
+				<td><input type="text" name="state" id="state"></td>
+			</tr>
+
+
+			<tr>
+				<td>zipcode:</td>
+				<td><input type="number" name="zip" id="zip"
+					placeholder="#####" onblur="populateCityAndState()" /></td>
+			</tr>
+
+
+
+			<tr>
+				<td>telephone number:</td>
+				<td><input type="number" name="telephone number"
+					id="telephone number" placeholder="###-###-####"></td>
+			</tr>
+
+
+			<tr>
+				<td>e-mail:</td>
+				<td><input type="email" name="e-mail" id="e-mail"
+					autocomplete="off" placeholder="xyz@abc.com"></td>
+			</tr>
+
+
+			<tr>
+				<td>URL:<br></td>
+				<td><input type="url" name="URL" id="URL"
+					placeholder="http://abc.com/index.html"></td>
+			</tr>
+
+
+			<tr>
+				<td>Date of survey:<br></td>
+				<td><input type="date" name="date of survey"
+					id="date of survey" placeholder="MM/DD/YYYY"></td>
+			</tr>
+
+
+		</table>
+
+		<br> <br> <br>
+
+
+		<h2>What students liked the most about the campus?</h2>
+		"Please select two or more options!"<br> <br>
+		<div>
+			<input id="students" type="checkbox" name="masoncheck"
+				value="students" />Students <input id="location" type="checkbox"
+				name="masoncheck" value="location">Location <input
+				id="campus" type="checkbox" name="masoncheck" value="campus">Campus<br>
+			<br> <input id="atmosphere" type="checkbox" name="masoncheck"
+				value="atmosphere">Atmosphere <input id="dorms"
+				type="checkbox" name="masoncheck" value="dorm rooms">Dorm
+			rooms <input id="sports" type="checkbox" name="masoncheck"
+				value="sports">Sports<br> <br>
+		</div>
+		<br> <br>
+
+
+		<h3>How students got interested?</h3>
+		<span id="radiospan" class="error"></span> "Please select one of the
+		following options!"<br> <br>
+
+		<div>
+
+			<input id="friends" type="radio" name="masonradio" value="friends" />friends
+			<input id="television" type="radio" name="masonradio"
+				value="television" />television <input id="internet" type="radio"
+				name="masonradio" value="internet" />internet <input id="other"
+				type="radio" name="masonradio" value="other" />other<br> <br>
+
+		</div>
+
+		<br> <br> <br>
+
+		<div>
+
+			additional comments:<br>
+			<textarea rows="6" cols="50" name="comment">
+</textarea>
+
+
+			<!-- <div id="panel1">
+		<p>Content for first panel.</p>
+		<p>Foo, bar, baz.</p><p>Yadda, yadda, yadda.</p> 	
+		</div>
+		<div id="panel2">
+		<p>Content for second panel.</p>
+		<p>Foo, bar, baz.</p><p>Yadda, yadda, yadda.</p>
+  		</div>
+  		<div id="panel3">
+		<p>Content for third panel.</p>
+		<p>Foo, bar, baz.</p><p>Yadda, yadda, yadda.</p> 
+		</div> -->
+
+		</div>
+
+
+
+
+
+		<br> <br> <br> High-School Graduation date <select>
+			<option value="" selected></option>
+			<option value="january">january</option>
+			<option value="february">february</option>
+			<option value="march">march</option>
+			<option value="april">april</option>
+			<option value="may">may</option>
+			<option value="june">june</option>
+			<option value="jule">july</option>
+			<option value="august">august</option>
+			<option value="september">september</option>
+			<option value="october">october</option>
+			<option value="november">november</option>
+			<option value="december">december</option>
+		</select> Year:<input type="text" name="Year"> <br> <br> <br>
+		<br> Likelihood of recommending this school to others <select>
+			<option value="" selected></option>
+			<option value="very likely">Very Likely</option>
+			<option value="likely">Likely</option>
+			<option value="unlikely">Unlikely</option>
+		</select> <br> <br> <label>
+			<td id="tdcomments">Additional Comments:</td>
+		</label>
+		<textarea type="text" name="comments" rows="5" cols="50"></textarea>
+		<br> <br> <label><br> Enter Atleast 10 numbers
+			separated by commas:<br>
+		<br> </label><br> <input type="text" id="data" align="right"
+			onblur="compute()" /><span id="cs"></span><br> <br> <br>
+		<label> Average: </label><br>
+		<output id="avg" value="0" align="right"> </output>
+		<br> <br> <br> <br> <label>Maximum: </label>
+		<output id="maxi" value="0" align="right"></output>
+		<br> <br> <br> <br> <input type="submit"
+			value="Submit" onclick="return validateMyForm();" /> <input
+			type="reset" value="Reset"> <br> <br> <br> <br>
+		<br>
+		<hr>
+
+
+		Created by :- Ambuj Fotedar(G00970949) SWE-642
+
+
+	</form>
+</div>
+</body>
+</html>
